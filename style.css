@@ -1,0 +1,106 @@
+body { 
+    margin: 0; 
+    padding: 0; 
+    font-family: 'Inter', -apple-system, sans-serif; 
+    background: #f8f9fa; 
+    display: flex; 
+    overflow: hidden; 
+}
+
+#side-panel {
+    width: 340px; 
+    height: 100vh; 
+    background: rgba(255, 255, 255, 0.88);
+    z-index: 2000; 
+    padding: 30px; 
+    box-sizing: border-box;
+    display: flex; 
+    flex-direction: column; 
+    border-right: 1px solid rgba(0,0,0,0.05);
+    backdrop-filter: blur(20px); 
+    box-shadow: 10px 0 30px rgba(0,0,0,0.02);
+}
+
+#map { 
+    flex-grow: 1; 
+    height: 100vh; 
+}
+
+.header h1 { 
+    font-size: 20px; 
+    color: #1a237e; 
+    margin: 0; 
+    font-weight: 800; 
+    letter-spacing: -0.5px; 
+}
+
+.header p { 
+    font-size: 11px; 
+    color: #78909c; 
+    margin-top: 5px; 
+    font-weight: 600; 
+    text-transform: uppercase; 
+}
+
+.controls { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 10px; 
+    margin-top: 30px; 
+}
+
+button {
+    padding: 14px 18px; 
+    border: 1px solid rgba(0,0,0,0.05); 
+    background: #fff;
+    border-radius: 12px; 
+    cursor: pointer; 
+    text-align: left;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+    color: #546e7a; 
+    font-size: 12px; 
+    font-weight: 700;
+}
+
+button:hover { 
+    transform: translateY(-1px); 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05); 
+}
+
+/* Bright Pollutant Colors with Soft Backgrounds */
+button#btn-pm25.active { background: rgba(255, 152, 0, 0.15); color: #e65100; border-color: #ff9800; }
+button#btn-pm10.active { background: rgba(244, 67, 54, 0.15); color: #c62828; border-color: #f44336; }
+button#btn-no2.active  { background: rgba(156, 39, 176, 0.15); color: #6a1b9a; border-color: #9c27b0; }
+button#btn-overlay.active { background: #1a237e; color: white; }
+
+.chart-container { 
+    margin-top: auto; 
+    height: 260px; 
+    padding-top: 20px; 
+    border-top: 1px solid #eee; 
+}
+
+.status { 
+    font-size: 10px; 
+    color: #4caf50; 
+    display: flex; 
+    align-items: center; 
+    gap: 6px; 
+    margin-top: 15px; 
+    font-weight: bold; 
+}
+
+.dot { 
+    width: 7px; 
+    height: 7px; 
+    background: #4caf50; 
+    border-radius: 50%; 
+    box-shadow: 0 0 8px #4caf50; 
+    animation: pulse 2s infinite; 
+}
+
+@keyframes pulse { 
+    0% { opacity: 1; } 
+    50% { opacity: 0.3; } 
+    100% { opacity: 1; } 
+}

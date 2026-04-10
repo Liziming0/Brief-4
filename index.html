@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>London Live Air Quality | 2026 Real-Time Monitor</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="side-panel">
+        <div class="header">
+            <h1>LONDON AIR</h1>
+            <p id="date-display">March 20, 2026</p>
+            <div class="status"><div class="dot"></div> LIVE API CONNECTED</div>
+        </div>
+
+        <div class="controls">
+            <button onclick="switchMode('pm25')" id="btn-pm25">PM2.5 - Fine Particles</button>
+            <button onclick="switchMode('pm10')" id="btn-pm10">PM10 - Inhalable Dust</button>
+            <button onclick="switchMode('no2')"  id="btn-no2">NO2 - Nitrogen Dioxide</button>
+            <hr style="width:100%; border:0; border-top:1px solid #eee; margin:10px 0;">
+            <button onclick="switchMode('overlay')" id="btn-overlay">OVERLAY - Combined Analysis</button>
+        </div>
+
+        <div class="chart-container">
+            <p style="font-size: 10px; color: #90a4ae; text-transform: uppercase; margin-bottom: 10px; font-weight: bold;">Density by District</p>
+            <canvas id="mainChart"></canvas>
+        </div>
+    </div>
+
+    <div id="map"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
